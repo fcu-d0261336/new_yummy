@@ -6,20 +6,24 @@
     android:weightSum="1">
 
     <LinearLayout
+        android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="1">
 
-        <ImageView
-            android:id="@+id/iv"
-            android:layout_width="match_parent"
-            android:layout_height="313dp" />
-
-        <TextView
-            android:id="@+id/tv_url"
+        <ImageButton
+            android:id="@+id/im_bt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoLink="web"/>
+            android:layout_weight="0.59"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:id="@+id/ptr_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
     </LinearLayout>
 </LinearLayout>

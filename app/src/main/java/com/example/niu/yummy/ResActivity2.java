@@ -23,12 +23,14 @@ public class ResActivity2 extends AppCompatActivity {
         cuisine_button.setOnClickListener(cuisine);
         Button res_button=(Button)findViewById(R.id.res_btn);
         res_button.setOnClickListener(res);
-
-
-        ////ImageButton///////
-        ImageButton test_button=(ImageButton)findViewById(R.id.r1);
-        test_button.setOnClickListener(test);
-        ////////////////////
+        ArrayList<PutPtr> ptrItem = new ArrayList<PutPtr>();
+        ptrItem.add(new PutPtr(R.drawable.r1,"http://mp.weixin.qq.com/s/-xO57_qJJsnZA_7ZHijBBA"));
+        ptrItem.add(new PutPtr(R.drawable.r2,"http://mp.weixin.qq.com/s/Xlnylj4RXxT28d0qO4E3nQ"));
+        ptrItem.add(new PutPtr(R.drawable.r3,"http://mp.weixin.qq.com/s/Qc1-xFkhC34YSP1IAHVWpw"));
+        ptrItem.add(new PutPtr(R.drawable.r4,"http://mp.weixin.qq.com/s/qXuXhBu6nuvWleKnrWbUFA"));
+        PtrArrayAdapter adapter =new PtrArrayAdapter(this,ptrItem);
+        lv=(ListView)findViewById(R.id.res_listview);
+        lv.setAdapter(adapter);
 
     }
 

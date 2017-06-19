@@ -50,41 +50,10 @@
             android:orientation="vertical"
             android:visibility="visible">
 
-            <ScrollView
+            <ListView
+                android:id="@+id/res_listview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/reslist"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:id="@+id/r1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/r1" />
-
-                    <ImageButton
-                        android:id="@+id/r2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/r2" />
-
-                    <ImageButton
-                        android:id="@+id/r3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scaleType="fitCenter"
-                        app:srcCompat="@drawable/r3" />
-                </LinearLayout>
-
-
-            </ScrollView>
-
+                android:layout_height="match_parent" />
         </RelativeLayout>
 
         <LinearLayout

@@ -50,17 +50,10 @@
             android:visibility="visible"
             android:layout_weight="7.8">
 
-            <ScrollView
+            <ListView
+                android:id="@+id/res_listview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="visible">
-
-
-                <WebView android:id="@+id/Toweb"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    />
-            </ScrollView>
+                android:layout_height="match_parent" />
         </RelativeLayout>
 
         <LinearLayout
