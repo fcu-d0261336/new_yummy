@@ -1,5 +1,8 @@
 package com.example.niu.yummy;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +11,12 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import static android.R.string.copy;
 
 /**
  * Created by NIU on 6/18/17.
@@ -29,6 +35,9 @@ public class webviewActivity extends AppCompatActivity {
         res_button.setOnClickListener(res);
         Button cuisine_button=(Button)findViewById(R.id.cuisine_btn);
         cuisine_button.setOnClickListener(cuisine);
+
+        Button share_button=(Button)findViewById(R.id.btn_user);
+        share_button.setOnClickListener(share);
 
 
         Intent intent=getIntent();
@@ -100,6 +109,23 @@ public class webviewActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+    private View.OnClickListener share=new View.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            Intent intent=getIntent();
+            String urltest=intent.getStringExtra("testIntent");
+            CopyToClipboard(webviewActivity.this,urltest);
+
+        }
+    };
+    public void CopyToClipboard(Context context,String text){
+        ClipboardManager clip = (ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
+
+        clip.setText(text); // 复制
+        Toast t= Toast.makeText(webviewActivity.this,"链接已复制，去分享给朋友吧！",Toast.LENGTH_SHORT);
+        t.show();
+
+    }
     //////////////////////////////////////////////////////////////////////////////////////////////
     //go back
     @Override

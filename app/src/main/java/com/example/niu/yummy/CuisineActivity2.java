@@ -36,8 +36,7 @@ public class CuisineActivity2 extends AppCompatActivity {
         main_button.setOnClickListener(back_main);
         Button res_button=(Button)findViewById(R.id.res_btn);
         res_button.setOnClickListener(res);
-        Button test_button=(Button)findViewById(R.id.btn_user);
-        test_button.setOnClickListener(test);
+
         ArrayList<PutPtr> ptrItem = new ArrayList<PutPtr>();
         ptrItem.add(new PutPtr(R.drawable.c1,"http://mp.weixin.qq.com/s/DoEhNTskP0h_FiMCX7MEXQ"));
         ptrItem.add(new PutPtr(R.drawable.c2,"http://mp.weixin.qq.com/s/D1Kp7T56MY5kjGTdDG3zcw"));
@@ -50,17 +49,6 @@ public class CuisineActivity2 extends AppCompatActivity {
 
 
 
-    private OnClickListener test=new OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-            Intent intent=new Intent();
-            intent.putExtra("testIntent", "http://mp.weixin.qq.com/s/qXuXhBu6nuvWleKnrWbUFA");
-            intent.setClass( CuisineActivity2.this,
-                    webviewActivity.class);
-            startActivity(intent);
-        }
-    };
 
 
 

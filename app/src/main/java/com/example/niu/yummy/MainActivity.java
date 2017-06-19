@@ -13,6 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 import cn.bmob.v3.Bmob;
 
@@ -21,6 +24,8 @@ import cn.bmob.v3.Bmob;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
         cuisine_button.setOnClickListener(cuisine);
         Button res_button=(Button)findViewById(R.id.res_btn);
         res_button.setOnClickListener(res);
+
+        ArrayList<PutPtr> ptrItem = new ArrayList<PutPtr>();
+        ptrItem.add(new PutPtr(R.drawable.c1,"http://mp.weixin.qq.com/s/DoEhNTskP0h_FiMCX7MEXQ"));
+        ptrItem.add(new PutPtr(R.drawable.r1,"http://mp.weixin.qq.com/s/-xO57_qJJsnZA_7ZHijBBA"));
+        PtrArrayAdapter adapter =new PtrArrayAdapter(this,ptrItem);
+        lv=(ListView)findViewById(R.id.res_listview);
+        lv.setAdapter(adapter);
+
     }
     private OnClickListener cuisine=new OnClickListener() {
         @Override
